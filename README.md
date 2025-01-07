@@ -1,18 +1,6 @@
-<details>
-<summary> <-- 打包插件</summary>
-
-[![Preview](./x/编译.png))
-</details> 
-
 
 <details>
-<summary> <-- 打包插件 ——> 到项目根目录</summary>
-
-[![Preview](./x/打包.png))
-</details>
-
-
-## 克隆 Theos
+<summary> <-- 克隆 Theos</summary>
 
 ```bash
 git clone --recursive https://github.com/theos/theos.git
@@ -27,22 +15,27 @@ export PATH=$THEOS/bin:$PATH
 ```bash
 source ~/.zshrc
 ```
+</details>
+
+<details>
+<summary> <-- 打包插件</summary>
+
+[![Preview](./x/编译.png))
+</details> 
+
+
+<details>
+<summary> <-- 打包插件 ——> 到项目根目录</summary>
+
+[![Preview](./x/打包.png))
+</details>
 
 
 
-## 关于. `Objective-C 的头文件引用` 
 
-![Preview](./x/1.png)
 
----
 
-| **方法**                            | **说明**                                                                                     |
-|-------------------------------------|----------------------------------------------------------------------------------------------|
-| **`#import <UIKit/UIKit.h>`**       | 这是一个常见的头文件引用。UIKit 是一个非常重要的 iOS 开发框架，包含了所有 UI 相关的功能，例如界面组件（如按钮、标签、文本框等）、视图管理、动画、用户交互。 |
-| **`#import <dispatch/dispatch.h>`**  | 这是导入 GCD（Grand Central Dispatch）框架的头文件。GCD 是苹果提供的一种多线程技术，用来高效地处理并发任务。在 iOS 和 macOS 中，GCD 是一个常用的工具，用来简化并发编程，提升应用的性能。 |
-| **`#import <objc/runtime.h>`**      | 这是导入 Objective-C 运行时的头文件。在 iOS 或 macOS 中，运行时可以用来做很多高级操作，比如动态添加方法、交换方法实现、查询类信息等。 |
 
----
 
 
 ## 关于. `Tweak.x` 
@@ -65,6 +58,21 @@ source ~/.zshrc
 | **`sub_7E6C()`**        | 动态获取 **`STUser`** 类，通过运行时机制调用 **`current`** 方法获取当前用户，并尝试调用 **`setPlan:`** 方法。 |
 | **`%ctor`**             | 让 **`InitFunc_0`** 在程序启动时自动执行。                       |
 | **`%hook STUser`**      | 对 **`STUser`** 类进行钩子操作。                                 |
+
+---
+
+
+## 关于. `Objective-C 的头文件引用` 
+
+![Preview](./x/1.png)
+
+---
+
+| **方法**                            | **说明**                                                                                     |
+|-------------------------------------|----------------------------------------------------------------------------------------------|
+| **`#import <UIKit/UIKit.h>`**       | 这是一个常见的头文件引用。UIKit 是一个非常重要的 iOS 开发框架，包含了所有 UI 相关的功能，例如界面组件（如按钮、标签、文本框等）、视图管理、动画、用户交互。 |
+| **`#import <dispatch/dispatch.h>`**  | 这是导入 GCD（Grand Central Dispatch）框架的头文件。GCD 是苹果提供的一种多线程技术，用来高效地处理并发任务。在 iOS 和 macOS 中，GCD 是一个常用的工具，用来简化并发编程，提升应用的性能。 |
+| **`#import <objc/runtime.h>`**      | 这是导入 Objective-C 运行时的头文件。在 iOS 或 macOS 中，运行时可以用来做很多高级操作，比如动态添加方法、交换方法实现、查询类信息等。 |
 
 ---
 
