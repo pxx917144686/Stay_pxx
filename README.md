@@ -1,6 +1,6 @@
 
 <details>
-<summary> <-- 克隆 Theos</summary>
+<summary> <-- 克隆官方版本 Theos  //   Theos 是一个工具集； 配合一个叫 Makefile 的文件（里面包含了编译代码的规则）make 命令会读取这个文件然后编译代码生成目标文件。 </summary>
 
 ```bash
 git clone --recursive https://github.com/theos/theos.git
@@ -18,14 +18,14 @@ source ~/.zshrc
 </details>
 
 <details>
-<summary> <-- 打包插件</summary>
+<summary> <-- make //   用于 编译 插件的源代码，生成插件文件。</summary>
 
 [![Preview](./x/编译.png))
 </details> 
 
 
 <details>
-<summary> <-- 打包插件 ——> 到项目根目录</summary>
+<summary> <-- make package  //  用于 打包 编译后的插件，生成 .deb 安装包。</summary>
 
 [![Preview](./x/打包.png))
 </details>
@@ -35,7 +35,10 @@ source ~/.zshrc
 
 
 
+</details>
 
+<details>
+<summary> 关于. `Tweak.x 的具体解释`  //  Tweak.x 是越狱插件的核心代码文件； </summary>
 
 
 ## 关于. `Tweak.x` 
@@ -201,11 +204,11 @@ void sub_7E6C() {
 
 
 
-
+</details>
 
 
 <details>
-<summary> ——> 完整代码如下</summary>
+<summary> --> Tweak.x 完整代码 如下</summary>
 
 ```objc
 
