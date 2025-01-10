@@ -1,9 +1,9 @@
 # 包信息
 PACKAGE_IDENTIFIER = com.dajiu.stay.pro
 PACKAGE_NAME = stay
-PACKAGE_VERSION = 0.1
+PACKAGE_VERSION = 0.2
 PACKAGE_REVISION = 1
-PACKAGE_ARCHITECTURE = iphoneos-arm
+PACKAGE_ARCHITECTURE = iphoneos-arm64
 PACKAGE_SECTION = Tweaks
 PACKAGE_DEPENDS = mobilesubstrate (>= 0.9.5000), firmware (>= 14.0)
 PACKAGE_DESCRIPTION = stay for ios 测试一下～
@@ -14,6 +14,9 @@ export THEOS_PACKAGE_DIR = $(CURDIR)
 
 # 设置安装路径为 /var/jb, 该路径适用于无根设备
 THEOS_PACKAGE_INSTALL_PREFIX = /var/jb
+
+# 指定使用 rootless 包方案
+export THEOS_PACKAGE_SCHEME = rootless
 
 # 设置构建目标平台，iphone:clang:latest:16.5 表示针对 iOS 16.5 版本编译
 # 如果需要支持多个版本，可以设置为 iphone:clang:latest
