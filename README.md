@@ -29,14 +29,14 @@ source ~/.zshrc
 <details>
 <summary> 👉  make </summary>
 
-[![Preview](./x/编译.png))
+![Preview](./x/编译.png)
 </details> 
 
 // Theos 编译打包成一个 .deb 安装包
 <details>
 <summary> 👉  make package </summary>
 
-[![Preview](./x/打包.png))
+![Preview](./x/打包.png)
 </details>
 
 
