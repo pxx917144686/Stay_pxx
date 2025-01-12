@@ -1,46 +1,54 @@
-// Theos 是一个工具集； 配合一个叫 Makefile 的文件（里面包含了编译代码的规则）make 命令会读取这个文件然后编译代码生成目标文件。
-<details>
-<summary> <-- 下载 Theos 仓库并将其路径添加到环境变量中 </summary>
+<table>
+<tr>
+<td>
 
-```bash
+<img src="./x/theos.png" width="350" height="180" />
+
+</td>
+<td>
+
+```js
+克隆 Theos 仓库
 git clone --recursive https://github.com/theos/theos.git
-```
 
-将 Theos 的路径添加到环境变量中
-```bash
+将 Theos 的路径添加到环境变量中：
 export THEOS=~/theos
 export PATH=$THEOS/bin:$PATH
-```
-重新加载配置
-```bash
+
+重新加载配置：
 source ~/.zshrc
 ```
 
+</td>
+</tr>
+</table>
+
 </details>
+
 // Theos 编译为 .dylib 文件
 <details>
-<summary> <-- 执行指令'make' </summary>
+<summary> 👉  make </summary>
 
 [![Preview](./x/编译.png))
 </details> 
 
-// Theos 会根据 Makefile 中的参数，打包成一个 .deb 安装包
+// Theos 编译打包成一个 .deb 安装包
 <details>
-<summary> <-- make package </summary>
+<summary> 👉  make package </summary>
 
 [![Preview](./x/打包.png))
 </details>
 
 
-
-
-
-## 关于. `（Tweak）核心代码 ` 
+<h1 align="center">
+  <br>
+  关于. `（Tweak）核心代码 `
+</h1>
 
 ![Preview](./x/2.png)
 
 
-## 目录 - 简单总结概括
+## 目录 - 简单的概括
 
 结合了 UIKit、GCD（Grand Central Dispatch）和 运行时编程，利用 Theos 框架中的钩子方法。
 
@@ -195,50 +203,3 @@ void sub_7E6C() {
 
 
 ---
-
-
-
-<details>
-<summary> --> Tweak.x 完整代码 如下</summary>
-
-```objc
-
-
-
-#import <UIKit/UIKit.h>
-#import <dispatch/dispatch.h>
-#import <objc/runtime.h>
-
-void sub_7E6C(void);
-
-void InitFunc_0() {
-    dispatch_time_t when = dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.0 * NSEC_PER_SEC));
-    dispatch_after(when, dispatch_get_main_queue(), ^{
-        NSLog(@"InitFunc_0 executed block on main queue");
-        sub_7E6C();
-    });
-}
-
-void sub_7E6C() {
-    Class STUserClass = objc_getClass("STUser");
-    if (STUserClass) {
-        id currentUser = [STUserClass performSelector:@selector(current)];
-        if (currentUser) {
-            [currentUser performSelector:@selector(setPlan:) withObject:nil];
-            NSLog(@"Called setPlan: on STUser");
-        } else {
-            NSLog(@"STUser current returned nil");
-        }
-    } else {
-        NSLog(@"STUser class not found");
-    }
-}
-
-%ctor {
-    InitFunc_0();
-}
-
-%hook STUser
-%end
-
-```
