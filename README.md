@@ -34,13 +34,6 @@ source ~/.zshrc
 
 
 
-
-</details>
-
-<details>
-<summary> 关于. `Tweak.x 的具体解释`  //  Tweak.x 是越狱插件的核心代码文件； </summary>
-
-
 ## 关于. `Tweak.x` 
 
 ![Preview](./x/2.png)
@@ -202,9 +195,6 @@ void sub_7E6C() {
 
 ---
 
-
-
-</details>
 
 
 <details>
