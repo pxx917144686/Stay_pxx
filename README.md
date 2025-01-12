@@ -1,6 +1,6 @@
-
+// Theos 是一个工具集； 配合一个叫 Makefile 的文件（里面包含了编译代码的规则）make 命令会读取这个文件然后编译代码生成目标文件。
 <details>
-<summary> <-- 克隆官方版本 Theos  //   Theos 是一个工具集； 配合一个叫 Makefile 的文件（里面包含了编译代码的规则）make 命令会读取这个文件然后编译代码生成目标文件。 </summary>
+<summary> <-- 下载 Theos 仓库并将其路径添加到环境变量中 </summary>
 
 ```bash
 git clone --recursive https://github.com/theos/theos.git
@@ -15,17 +15,18 @@ export PATH=$THEOS/bin:$PATH
 ```bash
 source ~/.zshrc
 ```
-</details>
 
+</details>
+// Theos 编译为 .dylib 文件
 <details>
-<summary> <-- make //   用于 编译 插件的源代码，生成插件文件。</summary>
+<summary> <-- 执行指令'make' </summary>
 
 [![Preview](./x/编译.png))
 </details> 
 
-
+// Theos 会根据 Makefile 中的参数，打包成一个 .deb 安装包
 <details>
-<summary> <-- make package  //  用于 打包 编译后的插件，生成 .deb 安装包。</summary>
+<summary> <-- make package </summary>
 
 [![Preview](./x/打包.png))
 </details>
@@ -34,14 +35,14 @@ source ~/.zshrc
 
 
 
-## 关于. `Tweak.x` 
+## 关于. `（Tweak）核心代码 ` 
 
 ![Preview](./x/2.png)
 
 
-## 目录、方法 简单总结概括
+## 目录 - 简单总结概括
 
-结合了 **UIKit**、**GCD**、**运行时编程**，使用了 **Theos** 中的钩子方法，整体实现了高效的 UI 操作与异步任务处理。
+结合了 UIKit、GCD（Grand Central Dispatch）和 运行时编程，利用 Theos 框架中的钩子方法。
 
 ---
 
